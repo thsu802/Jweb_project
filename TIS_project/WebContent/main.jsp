@@ -2,9 +2,15 @@
 	pageEncoding="utf-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html>
 <html>
   <head>
+      <%
+		String CONTEXT_PATH = request.getContextPath();
+   		String img_logo_src = CONTEXT_PATH + "/images/logo.jpg";
+		//컨텍스트 기준 상대경로 지정하면 안깨짐!
+	%>
+  
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta name="description" content="Bootstrap Admin Template">
@@ -86,70 +92,78 @@
         </nav>
       </header>
       
-      <!-- sidebar-->
+      <!-- sidebar 왼쪽 메뉴-->
       <aside class="sidebar-container">
         <div class="sidebar-header">
-          <div class="pull-right pt-lg text-muted hidden"><em class="ion-close-round"></em></div><a href="#" class="sidebar-header-logo"><img src="logo.jpg" data-svg-replace="logo.jpg" alt="Logo"><span class="sidebar-header-logo-text">Centric</span></a>
+          <div class="pull-right pt-lg text-muted hidden"><em class="ion-close-round"></em></div>
+          <a href="#" class="sidebar-header-logo">
+          <span class="sidebar-header-logo-text" align="center">&nbsp;&nbsp;
+          <img src="<%=img_logo_src%>" data-svg-replace="<%=img_logo_src%>" alt="Logo" border="0" width="90" height="60">
+          </span></a>
         </div>
         <div class="sidebar-content">
           <div class="sidebar-toolbar text-center"><a href=""><img src="img/user/01.jpg" alt="Profile" class="img-circle thumb64"></a>
-            <div class="mt">000님 환영합니다! </div> <!-- ${ loginSession.name }님 환영합니다. -->
+            <div class="mt">"GUEST"님 환영합니다! </div> <!-- ${ loginSession.name }님 환영합니다. -->
           </div>
           <nav class="sidebar-nav">
             <ul>
-            <!-- Home -->
-              <li><a href="main.jsp" class="ripple"><span class="pull-right nav-label"></span><span class="nav-icon"><img src="" data-svg-replace="img/icons/aperture.svg" alt="MenuItem" class="hidden"></span><span>Home</span></a></li>
-             
+            
              <!-- 여행경로 후기 게시판 --> 
-              <li><a href="#" class="ripple"><span class="pull-right nav-caret"><em class="ion-ios-arrow-right"></em></span><span class="pull-right nav-label"></span><span class="nav-icon"><img src="" data-svg-replace="img/icons/connection-bars.svg" alt="MenuItem" class="hidden"></span><span>여행경로후기</span></a>
+              <li><a href=# class="ripple"><span class="pull-right nav-caret">
+              <em class="ion-ios-arrow-right"></em></span>
+              <span class="pull-right nav-label"></span>
+              <span class="nav-icon"><img src="" data-svg-replace="img/icons/connection-bars.svg" alt="MenuItem" class="hidden"></span>
+              <span>여행경로후기</span></a>
                 <ul class="sidebar-subnav">
-                  <li><a href="flot.html" class="ripple"><span class="pull-right nav-label"></span><span>일본</span></a></li>
-                  <li><a href="radial.html" class="ripple"><span class="pull-right nav-label"></span><span>중국</span></a></li>
-                  <li><a href="rickshaw.html" class="ripple"><span class="pull-right nav-label"></span><span>대만</span></a></li>
+                  <li><a href="emptyPage.jsp" class="ripple"><span class="pull-right nav-label"></span>
+                  <span>일본</span></a></li>
+                  <li><a href="radial.html" class="ripple"><span class="pull-right nav-label"></span>
+                  <span>중국</span></a></li>
+                  <li><a href="rickshaw.html" class="ripple"><span class="pull-right nav-label"></span>
+                  <span>대만</span></a></li>
                 </ul>
               </li>  
               
             <!-- 베스트글 -->
-              <li><a href="dashboard.html" class="ripple"><span class="pull-right nav-label"></span><span class="nav-icon"><img src="" data-svg-replace="img/icons/aperture.svg" alt="MenuItem" class="hidden"></span><span>베스트 글</span></a></li>
+              <li><a href="dashboard.html" class="ripple"><span class="pull-right nav-label"></span><span class="nav-icon">
+              <img src="" data-svg-replace="img/icons/aperture.svg" alt="MenuItem" class="hidden"></span>
+              <span>베스트 글</span></a></li>
 
 			<!-- 나만의 게시판 -->
-              <li><a href="dashboard.html" class="ripple"><span class="pull-right nav-label"></span><span class="nav-icon"><img src="" data-svg-replace="img/icons/aperture.svg" alt="MenuItem" class="hidden"></span><span>나만의 게시판</span></a></li>
+              <li><a href="dashboard.html" class="ripple"><span class="pull-right nav-label"></span><span class="nav-icon">
+              <img src="" data-svg-replace="img/icons/aperture.svg" alt="MenuItem" class="hidden"></span>
+              <span>나만의 게시판</span></a></li>
 
 			<!-- 사진 모아보기 -->
-              <li><a href="#" class="ripple"><span class="pull-right nav-caret"><em class="ion-ios-arrow-right"></em></span><span class="pull-right nav-label"></span><span class="nav-icon"><img src="" data-svg-replace="img/icons/ios-browsers.svg" alt="MenuItem" class="hidden"></span><span>사진 모아보기</span></a>
+              <li><a href="#" class="ripple"><span class="pull-right nav-caret"><em class="ion-ios-arrow-right"></em></span>
+              <span class="pull-right nav-label"></span><span class="nav-icon">
+             <!--  <img src="" data-svg-replace="img/icons/ios-browsers.svg" alt="MenuItem" class="hidden"> -->
+              </span><span>사진 모아보기</span></a>
                 <ul id="pages" class="sidebar-subnav">
-                  <li><a href="gallery1.html" class="ripple"><span class="pull-right nav-label"></span><span>일본</span></a></li>
-                  <li><a href="gallery2.html" class="ripple"><span class="pull-right nav-label"></span><span>중국</span></a></li>
-                  <li><a href="gallery3.html" class="ripple"><span class="pull-right nav-label"></span><span>대만</span></a></li>
+                  <li><a href="gallery1.html" class="ripple"><span class="pull-right nav-label"></span>
+                  <span>일본</span></a></li>
+                  <li><a href="gallery2.html" class="ripple"><span class="pull-right nav-label"></span>
+                  <span>중국</span></a></li>
+                  <li><a href="gallery3.html" class="ripple"><span class="pull-right nav-label"></span>
+                  <span>대만</span></a></li>
                 </ul>
               </li>
-              
-            <!-- Maps -->
-              <li><a href="#" class="ripple"><span class="pull-right nav-caret"><em class="ion-ios-arrow-right"></em></span><span class="pull-right nav-label"></span><span class="nav-icon"><img src="" data-svg-replace="img/icons/planet.svg" alt="MenuItem" class="hidden"></span><span>Maps</span></a>
-                <ul id="maps" class="sidebar-subnav">
-                  <li><a href="google-map-full.html" class="ripple"><span class="pull-right nav-label"></span><span>Google Maps Full</span></a></li>
-                  <li><a href="google-map.html" class="ripple"><span class="pull-right nav-label"></span><span>Google Maps</span></a></li>
-                  <li><a href="vector-map.html" class="ripple"><span class="pull-right nav-label"></span><span>Vector Maps</span></a></li>
-                  <li><a href="datamaps.html" class="ripple"><span class="pull-right nav-label"></span><span>Datamaps</span></a></li>
-                </ul>
-              </li>
-              
-            <!-- 마이페이지 -->
-              <li><a href="#" class="ripple"><span class="pull-right nav-caret"><em class="ion-ios-arrow-right"></em></span><span class="pull-right nav-label"></span><span class="nav-icon"><img src="" data-svg-replace="img/icons/person-stalker.svg" alt="MenuItem" class="hidden"></span><span>마이페이지</span></a>
-                <ul id="user" class="sidebar-subnav">
-                  <li><a href="myPage.jsp" class="ripple"><span class="pull-right nav-label"></span><span>나의정보</span></a></li>
-                  <li><a href="logOut.jsp" class="ripple"><span class="pull-right nav-label"></span><span>로그아웃</span></a></li>
-                </ul>
-              </li>
-            </ul>
           
+            </ul>
           </nav>
         </div>
       </aside>
       <div class="sidebar-layout-obfuscator"></div>
-      <!-- Main section-->
+      
+      
+      <!-- Main section
+      		바뀌는 중앙 부분 우리가 구현 해야함 ㅎㅎ
+      -->
       <main class="main-container">
-        <!-- Page content-->
+      
+        <!-- Page content
+        	페이지 상단의 제목 부분
+        -->
         <section>
           <div class="content-heading bg-white">
             <div class="row">
@@ -215,12 +229,16 @@
           </div>
         </section>
         
-        
         <!--  하단 Page footer-->
-        <footer><span>2017 - Centric app.</span></footer>
-      </main>
+        <footer><span>2017-03-16 &nbsp;&nbsp; jj들의 공간입니다. <br> 민지혜천국</span></footer>
+      </main>     
     </div>
-    <!-- Search template-->
+    <!-- 메인 끝! -->
+    
+    
+    <!-- Search template
+    	상단에 검색기능. 나중에 삭제할수도 삭제할듯?
+    -->
     <div tabindex="-1" role="dialog" class="modal modal-top fade modal-search">
       <div class="modal-dialog">
         <div class="modal-content">
@@ -242,6 +260,8 @@
       </div>
     </div>
     <!-- End Search template-->
+    
+    
     <!-- Settings template-->
     <div tabindex="-1" role="dialog" class="modal-settings modal modal-right fade">
       <div class="modal-dialog modal-lg">
@@ -429,10 +449,11 @@
         </div>
       </div>
     </div>
-    <!-- End Settings template-->
-    <!-- Google Maps API-->
-    <script type="text/javascript" src="http://maps.google.com/maps/api/js?key=AIzaSyBNs42Rt_CyxAqdbIBK0a5Ut83QiauESPA"></script>
-    <!-- build:js(../app) js/vendor.js-->
+    <!-- End Settings template  싹다 지워버려-->
+    
+    
+    
+      <!-- build:js(../app) js/vendor.js-->
     <!-- Modernizr-->
     <script src="vendor/modernizr/modernizr.custom.js"></script>
     <!-- jQuery-->
