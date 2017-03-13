@@ -2,7 +2,7 @@
 	pageEncoding="utf-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8">
@@ -124,15 +124,6 @@
                 </ul>
               </li>
               
-            <!-- Maps -->
-              <li><a href="#" class="ripple"><span class="pull-right nav-caret"><em class="ion-ios-arrow-right"></em></span><span class="pull-right nav-label"></span><span class="nav-icon"><img src="" data-svg-replace="img/icons/planet.svg" alt="MenuItem" class="hidden"></span><span>Maps</span></a>
-                <ul id="maps" class="sidebar-subnav">
-                  <li><a href="google-map-full.html" class="ripple"><span class="pull-right nav-label"></span><span>Google Maps Full</span></a></li>
-                  <li><a href="google-map.html" class="ripple"><span class="pull-right nav-label"></span><span>Google Maps</span></a></li>
-                  <li><a href="vector-map.html" class="ripple"><span class="pull-right nav-label"></span><span>Vector Maps</span></a></li>
-                  <li><a href="datamaps.html" class="ripple"><span class="pull-right nav-label"></span><span>Datamaps</span></a></li>
-                </ul>
-              </li>
               
             <!-- 마이페이지 -->
               <li><a href="#" class="ripple"><span class="pull-right nav-caret"><em class="ion-ios-arrow-right"></em></span><span class="pull-right nav-label"></span><span class="nav-icon"><img src="" data-svg-replace="img/icons/person-stalker.svg" alt="MenuItem" class="hidden"></span><span>마이페이지</span></a>
