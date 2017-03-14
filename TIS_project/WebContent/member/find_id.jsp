@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
-	pageEncoding="utf-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+	pageEncoding="utf-8"%><%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html>
@@ -10,7 +9,7 @@
     <meta name="description" content="Bootstrap Admin Template">
     <meta name="keywords" content="app, responsive, jquery, bootstrap, dashboard, admin">
     <title>Centric - Bootstrap Admin Template</title>
-    <!-- build:css(${applicationScope.CONTEXT_PATH}/app) css/vendor-user.css-->
+    <!-- build:css(../app) css/vendor-user.css-->
     <!-- Animate.CSS-->
     <link rel="stylesheet" href="${applicationScope.CONTEXT_PATH}/vendor/animate.css/animate.css">
     <!-- Bootstrap-->
@@ -25,7 +24,7 @@
   </head>
   <body>
   
-  <!-- 로그인 -->
+  <!-- 아이디찾기 -->
     <div class="layout-container">
       <div class="page-container bg-blue-grey-900">
         <div class="container-full">
@@ -34,43 +33,34 @@
               <div class="card-offset pb0">
               </div>
               <div class="card-heading">
-                <div class="card-title text-center">Login</div>
+                <div class="card-title text-center">아이디 찾기</div>
               </div>
               <div class="card-body">
               
-              <!-- 아이디 -->
+ 			<!-- 이름 -->
                 <div class="mda-form-group float-label mda-input-group">
                   <div class="mda-form-control">
-                    <input type="email" name="accountName" required="" class="form-control">
+                    <input type="text" name="accountPasswordCheck" required="" class="form-control">
                     <div class="mda-form-control-line"></div>
-                    <label>아이디</label>
-                  </div><span class="mda-input-group-addon"><em class="ion-ios-email-outline icon-lg"></em></span>
+                    <label>이름</label>
+                  </div><span class="mda-input-group-addon"><em class="ion-person-stalker"></em></span>
                 </div>
                 
-               <!-- 비밀번호 -->
+    		<!-- 휴대폰 -->
                 <div class="mda-form-group float-label mda-input-group">
                   <div class="mda-form-control">
-                    <input type="password" name="accountPassword" required="" class="form-control">
+                    <input type="text" name="accountPasswordCheck" required="" class="form-control">
                     <div class="mda-form-control-line"></div>
-                    <label>비밀번호</label>
-                  </div><span class="mda-input-group-addon"><em class="ion-ios-locked-outline icon-lg"></em></span>
-                </div> 
-              </div>
+                    <label>휴대폰</label>
+                  </div><span class="mda-input-group-addon"><em class="ion-android-phone-portrait"></em></span>
+                </div>
               
-            <!-- 로그인 main.jsp로 --> 
-             <button type="submit" class="btn btn-primary btn-flat"><a href="${applicationScope.CONTEXT_PATH}/main.jsp">로그인</a></button>
- 
-            <!-- 아이디찾기 -->
-              <button type="button" class="btn btn-primary btn-flat"><a href="find_id.jsp">아이디찾기</a></button>
-              
-            <!-- 비밀번호찾기 -->
-              <button type="button" class="btn btn-primary btn-flat"><a href="find_pw.jsp">비밀번호찾기</a></button>
-             
-            <!-- 회원가입 -->
-              <button type="button" class="btn btn-primary btn-flat"><a href="signup.jsp">회원가입</a></button> 
-              
-            <!-- 취소 main.jsp로 -->
-              <button type="button" class="btn btn-primary btn-flat"><a href="${applicationScope.CONTEXT_PATH}/main.jsp">취소</a></button> 
+            <!-- 아이디찾기 
+            		아이디찾기 누르면, 어디로 가서 아이디를 보여주지?? 일단 login.jsp로 해둠--> 
+             <button type="submit" class="btn btn-primary btn-flat"><a href="${applicationScope.CONTEXT_PATH}/login.jsp">아이디찾기</a></button>
+
+			<!-- 취소 -->
+             <button type="submit" class="btn btn-primary btn-flat"><a href="${applicationScope.CONTEXT_PATH}/main.jsp"> 취소</a></button>
              
               <div class="card-body bg-gray-lighter text-center text-sm"><span class="spr">By registering I accept the</span>
               <a href="#" class="spr">Terms of Service</a><span class="spr">and</span><a href="#" class="spr">Privacy</a></div>
@@ -78,7 +68,7 @@
         </div>
       </div>
     </div>
-    <!-- build:js(${applicationScope.CONTEXT_PATH}/app) js/vendor-user.js-->
+    <!-- build:js(../app) js/vendor-user.js-->
     <!-- Modernizr-->
     <script src="${applicationScope.CONTEXT_PATH}/vendor/modernizr/modernizr.custom.js"></script>
     <!-- jQuery-->
